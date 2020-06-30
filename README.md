@@ -1,5 +1,17 @@
 [![Go Report Card](https://goreportcard.com/badge/trezor/blockbook)](https://goreportcard.com/report/trezor/blockbook)
 
+# Blockbook Fork - Bitcoin Cash SV
+
+This is my personal fork of Blockbook. I thought it best to fork the repo in order to freeze the code base for my own personal use in creating a copy of the indexer for BCHSV. 
+
+## Build and installation instructions
+
+Clone this repository and enter the directory it creates.
+
+ make  all-bcashsv
+
+The above command will generate two .deb files in the build directory. 
+
 # Blockbook
 
 **Blockbook** is back-end service for Trezor wallet. Main features of **Blockbook** are:
