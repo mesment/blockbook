@@ -18,7 +18,7 @@ cd blockbook
 
 ~~FROM debian:9~~FROM ubuntu:18.04
 
-4. 在blockbook 目录下执行:
+4. 在blockbook 目录下执行命令编译可执行文件，以bcashsv为例:
 
  make  all-bcashsv
  
