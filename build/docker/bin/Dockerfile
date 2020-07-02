@@ -33,8 +33,11 @@ RUN strip /opt/rocksdb/ldb /opt/rocksdb/sst_dump && \
     cp /opt/rocksdb/ldb /opt/rocksdb/sst_dump /build
 
 # install build tools
+ENV GOPROXY=https://goproxy.cn
+ENV GO111MODULE=on
 RUN go get github.com/gobuffalo/packr/...
 
+ENV GO111MODULE=""
 # download pre-loaded depencencies
 RUN \
     cleanup() { rm -rf $GOPATH/src/github.com/trezor ; } && \
