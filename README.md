@@ -39,7 +39,7 @@ cd blockbook
 blockbook-bcashsv_0.3.4_amd64.deb
 backend-bcashsv_1.0.1-satoshilabs-1_amd64.deb
 ```
-6. 使用上一步的deb作为构建blockbook 镜像  [BSV Docker container](https://github.com/mesment/blockbook-docker-bsv)
+6. 使用上一步的deb来构建bsv blockbook 镜像  [bsv-insight docker镜像](https://github.com/mesment/blockbook-docker-bsv)
 
 
 # Blockbook
