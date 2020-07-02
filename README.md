@@ -1,16 +1,35 @@
 [![Go Report Card](https://goreportcard.com/badge/trezor/blockbook)](https://goreportcard.com/report/trezor/blockbook)
 
 # Blockbook Fork - Bitcoin Cash SV
-
-This is my personal fork of Blockbook. I thought it best to fork the repo in order to freeze the code base for my own personal use in creating a copy of the indexer for BCHSV. 
+ 
 
 ## Build and installation instructions
 
-Clone this repository and enter the directory it creates.
+1. 克隆仓库并进入blockbook 目录
+```
+git clone  https://github.com/trezor/blockbook.git
+
+cd blockbook
+```
+
+2. 在configs/coins 目录下找到目标币种的配置文件将币种的下载地址更新为最新版本的地址
+
+3. 编辑/build/docker/bin/Dockerfile  将基础镜像 debian:9 替换为ubuntu:18.04
+
+~~FROM debian:9~~FROM ubuntu:18.04
+
+4. 在blockbook 目录下执行:
 
  make  all-bcashsv
+ 
+5. 等待编译完成后会在build 目录下生成两个deb 文件, 例如
+```
+blockbook-bcashsv_0.3.4_amd64.deb
+backend-bcashsv_1.0.1-satoshilabs-1_amd64.deb
+```
+blockbook-bcashsv_0.3.4_amd64.deb
+backend-bcashsv_1.0.1-satoshilabs-1_amd64.deb
 
-The above command will generate two .deb files in the build directory. 
 
 # Blockbook
 
