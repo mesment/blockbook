@@ -14,19 +14,32 @@ cd blockbook
 
 2. 在configs/coins 目录下找到目标币种的配置文件将币种的下载地址更新为最新版本的地址
 
-3. 编辑/build/docker/bin/Dockerfile  将基础镜像 debian:9 替换为ubuntu:18.04
+3. 编辑build/docker/bin/Dockerfile  将基础镜像 debian:9 替换为ubuntu:16.04  并将Dockerfile内 35行到38行 替换如下:
 
-~~FROM debian:9~~FROM ubuntu:18.04
+~~FROM debian:9~~FROM ubuntu:16.04
+
+```
+ 35 # install build tools
+ 36 ENV GOPROXY=https://goproxy.cn
+ 37 ENV GO111MODULE=on
+ 38 RUN go get github.com/gobuffalo/packr/...
+ 39 
+ 40 ENV GO111MODULE=""
+ 41 # download pre-loaded depencencies
+
+```
 
 4. 在blockbook 目录下执行命令编译可执行文件，以bcashsv为例:
-
+```
  make  all-bcashsv
+ ```
  
-5. 等待编译完成后会在build 目录下生成两个deb 文件, 例如
+5. 等待编译完成后会在build 目录下生成两个可安装deb 文件, 如下:
 ```
 blockbook-bcashsv_0.3.4_amd64.deb
 backend-bcashsv_1.0.1-satoshilabs-1_amd64.deb
 ```
+6. 使用上一步的deb作为构建blockbook 镜像  [BSV Docker container](https://github.com/mesment/blockbook-docker-bsv)
 
 
 # Blockbook
