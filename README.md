@@ -27,8 +27,6 @@ cd blockbook
 blockbook-bcashsv_0.3.4_amd64.deb
 backend-bcashsv_1.0.1-satoshilabs-1_amd64.deb
 ```
-blockbook-bcashsv_0.3.4_amd64.deb
-backend-bcashsv_1.0.1-satoshilabs-1_amd64.deb
 
 
 # Blockbook
